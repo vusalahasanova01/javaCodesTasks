@@ -2,6 +2,7 @@ package algoExpert;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class FirstDublicateValue {
   public  int firstDuplicateValue(int[] array) {
@@ -21,6 +22,16 @@ public class FirstDublicateValue {
       Collections.sort(arrayList);
       return array[arrayList.get(0)];
     }
+  }
+  public int firstDuplicateValue1(int[] array) {
+    List<Integer> list = new ArrayList<>();
+
+
+    for(int i: array){
+      if(list.contains(i))  return i;
+      else  list.add(i);
+    }
+    return -1;
   }
 
   public static void main(String[] args) {
