@@ -1,4 +1,5 @@
 package streams;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +8,7 @@ import java.util.stream.Collectors;
 public class Main {
   public static void main(String[] args) {
     List<String> words = Arrays.asList("book", "flowers", "moon", "java");
+
     words.forEach(System.out::println);
     words.stream().forEach(s -> System.out.println(s));
     words.forEach(s -> System.out.println(s));
@@ -29,8 +31,14 @@ public class Main {
 
     String result2 = words.stream()
         .filter(s -> s.equals("book2")).findAny()
-        .orElseThrow(()-> new IllegalArgumentException("not found"));
+        .orElseThrow(() -> new IllegalArgumentException("not found"));
     System.out.println(result2);
+
+
+    int result3 = words.stream()
+        .map(String::length)
+        .reduce(0, (a, b) -> a + b);
+    System.out.println(result3);
   }
 
 
