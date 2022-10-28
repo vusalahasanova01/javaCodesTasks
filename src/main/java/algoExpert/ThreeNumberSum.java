@@ -7,20 +7,20 @@ import java.util.List;
 public class ThreeNumberSum {
     public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
         // Write your code here.
+        Arrays.sort(array);
         List<Integer[]> arr = new ArrayList<>();
-        for(int i = array.length-1; i > 0; i--) {
-            for (int j = i-1 ; j >=0 ; j--){
-                for (int k = j-1 ; k >= 0; k--){
-                    if (array[i]+array[j]+array[k]==0 && i!=j && i!=k && j!=k){
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                for (int k = j + 1; k < array.length; k++) {
+                    if (array[i] + array[j] + array[k] == targetSum) {
                         Integer[] integers = {array[i], array[j], array[k]};
-                        Arrays.sort(integers);
                         arr.add(integers);
                     }
                 }
             }
         }
-
         return arr;
+
     }
 
     public static void main(String[] args) {
