@@ -1,4 +1,4 @@
-package solidPrinciples;
+package solidPrinciples.SingleResponsibility;
 
 public class CheckValue {
 

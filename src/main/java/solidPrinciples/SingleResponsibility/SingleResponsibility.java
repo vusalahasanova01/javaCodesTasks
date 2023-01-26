@@ -1,9 +1,6 @@
-package solidPrinciples;
+package solidPrinciples.SingleResponsibility;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
 public class SingleResponsibility {
 
